@@ -31,6 +31,9 @@ final class FilterTools {
     }
 
     static String getRelativePath(HttpServletRequest request, String filterPath) {
+        if(request == null || filterPath == null) {
+            return null;
+        }
         String path = request.getRequestURI();
         String contextPath = request.getContextPath();
 
